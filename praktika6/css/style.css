@@ -1,0 +1,42 @@
+@import url(reset.css);
+
+/*тут ваш keyframe код*/
+
+.page {
+  /* эти единицы измерения мы изучим чуть позже */
+	width: 100vw;
+	height: 100vh;
+	background-image: url(https://c1.staticflickr.com/6/5173/5436446554_9244788c36_b.jpg);
+	display: flex;
+	position: relative;
+}
+.sun {
+	width: 300px;
+	height: 300px;
+	background-image: url(https://pics.freeicons.io/uploads/icons/png/4941766021637258773-512.png);
+	background-size: cover;
+	background-position: center;
+	margin: auto;
+
+}
+.earth {
+	width: 400px;
+	height: 400px;
+	/*background-color: green;*/
+	background-image: url(https://pics.freeicons.io/uploads/icons/png/68863564516354197474526-512.png);
+	background-size: 50px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+	/* вызовите вашу анимацию здесь */
+	transition-duration: 12s;
+	transition-timing-function: ease;
+
+}
+.earth:hover{
+	transform: rotate(5turn);
+}
