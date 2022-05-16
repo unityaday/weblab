@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<select id="eth" onchange="update()">
+		<option value="usd">USD</option>
+		<option value="rub" selected>RUB</option>
+		<option value="eur">EUR</option>
+	</select>
+	<input type="text" id="value">
+	<script>
+		console.log(getValues({lang: "JavaScript", course: "third"}))
+		const etherium = {
+			usd: 2811,
+			rub: 200612,
+			eur: 2666
+		}
+		function update(){
+			var cr = document.getElementById('eth');
+			const key = cr.options[cr.selectedIndex].value
+			document.getElementById('value').value = getRate(etherium, key)
+		}
+		function getRate(a, k){
+			return a[k]
+		}
+
+		function getValues(a){
+			var array = Object.values(a)
+			for (let index = 0; index < array.length; index++) {
+				array[index] = array[index].toUpperCase()
+			}
+			return array
+		}
+		const adress = {
+			street: 'Lenina',
+			building: 1,
+			flat: 40
+		}
+		const getInfo = (a) => {
+			var array = Object.keys(a)
+			array.forEach(key => {
+				console.log({key})
+			});
+		}
+		getInfo(adress)
+
+		const obj1 = {
+			id: 1,
+			type: 'text',
+			length: 20
+		}
+		const obj2 = {
+			name: 'object2',
+			type: 'number'
+		}
+		const joinArrays = (a, b) => {
+			return {...a, ...b}
+		}
+		console.log(joinArrays(obj1, obj2))
+	</script>
+</body>
+</html>
